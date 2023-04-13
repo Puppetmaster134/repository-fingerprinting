@@ -1,0 +1,229 @@
+%%% -*-BibTeX-*-
+%%% Do NOT edit. File created by BibTeX with style
+%%% ACM-Reference-Format-Journals [18-Jan-2012].
+
+\begin{thebibliography}{16}
+
+%%% ====================================================================
+%%% NOTE TO THE USER: you can override these defaults by providing
+%%% customized versions of any of these macros before the \bibliography
+%%% command.  Each of them MUST provide its own final punctuation,
+%%% except for \shownote{}, \showDOI{}, and \showURL{}.  The latter two
+%%% do not use final punctuation, in order to avoid confusing it with
+%%% the Web address.
+%%%
+%%% To suppress output of a particular field, define its macro to expand
+%%% to an empty string, or better, \unskip, like this:
+%%%
+%%% \newcommand{\showDOI}[1]{\unskip}   % LaTeX syntax
+%%%
+%%% \def \showDOI #1{\unskip}           % plain TeX syntax
+%%%
+%%% ====================================================================
+
+\ifx \showCODEN    \undefined \def \showCODEN     #1{\unskip}     \fi
+\ifx \showDOI      \undefined \def \showDOI       #1{#1}\fi
+\ifx \showISBNx    \undefined \def \showISBNx     #1{\unskip}     \fi
+\ifx \showISBNxiii \undefined \def \showISBNxiii  #1{\unskip}     \fi
+\ifx \showISSN     \undefined \def \showISSN      #1{\unskip}     \fi
+\ifx \showLCCN     \undefined \def \showLCCN      #1{\unskip}     \fi
+\ifx \shownote     \undefined \def \shownote      #1{#1}          \fi
+\ifx \showarticletitle \undefined \def \showarticletitle #1{#1}   \fi
+\ifx \showURL      \undefined \def \showURL       {\relax}        \fi
+% The following commands are used for tagged output and should be
+% invisible to TeX
+\providecommand\bibfield[2]{#2}
+\providecommand\bibinfo[2]{#2}
+\providecommand\natexlab[1]{#1}
+\providecommand\showeprint[2][]{arXiv:#2}
+
+\bibitem[Cai et~al\mbox{.}(2012)]%
+        {cai2012touching}
+\bibfield{author}{\bibinfo{person}{Xiang Cai}, \bibinfo{person}{Xin~Cheng
+  Zhang}, \bibinfo{person}{Brijesh Joshi}, {and} \bibinfo{person}{Rob
+  Johnson}.} \bibinfo{year}{2012}\natexlab{}.
+\newblock \showarticletitle{Touching from a distance: Website fingerprinting
+  attacks and defenses}. In \bibinfo{booktitle}{\emph{Proceedings of the 2012
+  ACM conference on Computer and communications security}}.
+  \bibinfo{pages}{605--616}.
+\newblock
+
+
+\bibitem[Cheng and Avnur(1998)]%
+        {cheng1998traffic}
+\bibfield{author}{\bibinfo{person}{Heyning Cheng} {and} \bibinfo{person}{Ron
+  Avnur}.} \bibinfo{year}{1998}\natexlab{}.
+\newblock \showarticletitle{Traffic analysis of SSL encrypted web browsing}.
+\newblock \bibinfo{journal}{\emph{Project paper, University of Berkeley}}
+  (\bibinfo{year}{1998}).
+\newblock
+
+
+\bibitem[Cherubin(2017)]%
+        {cherubin2017bayes}
+\bibfield{author}{\bibinfo{person}{Giovanni Cherubin}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Bayes, not na{\"\i}ve: Security bounds on website
+  fingerprinting defenses}.
+\newblock \bibinfo{journal}{\emph{Proceedings on Privacy Enhancing
+  Technologies}} \bibinfo{volume}{2017}, \bibinfo{number}{4}
+  (\bibinfo{year}{2017}), \bibinfo{pages}{215--231}.
+\newblock
+
+
+\bibitem[Dingledine et~al\mbox{.}(2004)]%
+        {dingledine2004tor}
+\bibfield{author}{\bibinfo{person}{Roger Dingledine}, \bibinfo{person}{Nick
+  Mathewson}, {and} \bibinfo{person}{Paul Syverson}.}
+  \bibinfo{year}{2004}\natexlab{}.
+\newblock \bibinfo{booktitle}{\emph{Tor: The second-generation onion router}}.
+\newblock \bibinfo{type}{{T}echnical {R}eport}. \bibinfo{institution}{Naval
+  Research Lab Washington DC}.
+\newblock
+
+
+\bibitem[Dohmke(2023)]%
+        {dohmke2023}
+\bibfield{author}{\bibinfo{person}{Thomas Dohmke}.}
+  \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{100 million developers and counting}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://github.blog/2023-01-25-100-million-developers-and-counting/}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Hayes et~al\mbox{.}(2016)]%
+        {hayes2016k}
+\bibfield{author}{\bibinfo{person}{Jamie Hayes}, \bibinfo{person}{George
+  Danezis}, {et~al\mbox{.}}} \bibinfo{year}{2016}\natexlab{}.
+\newblock \showarticletitle{k-fingerprinting: A Robust Scalable Website
+  Fingerprinting Technique.}. In \bibinfo{booktitle}{\emph{USENIX security
+  symposium}}. \bibinfo{pages}{1187--1203}.
+\newblock
+
+
+\bibitem[Herrmann et~al\mbox{.}(2009)]%
+        {herrmann2009website}
+\bibfield{author}{\bibinfo{person}{Dominik Herrmann}, \bibinfo{person}{Rolf
+  Wendolsky}, {and} \bibinfo{person}{Hannes Federrath}.}
+  \bibinfo{year}{2009}\natexlab{}.
+\newblock \showarticletitle{Website fingerprinting: attacking popular privacy
+  enhancing technologies with the multinomial na{\"\i}ve-bayes classifier}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2009 ACM workshop on Cloud
+  computing security}}. \bibinfo{pages}{31--42}.
+\newblock
+
+
+\bibitem[Ho(1995)]%
+        {ho1995random}
+\bibfield{author}{\bibinfo{person}{Tin~Kam Ho}.}
+  \bibinfo{year}{1995}\natexlab{}.
+\newblock \showarticletitle{Random decision forests}. In
+  \bibinfo{booktitle}{\emph{Proceedings of 3rd international conference on
+  document analysis and recognition}}, Vol.~\bibinfo{volume}{1}. IEEE,
+  \bibinfo{pages}{278--282}.
+\newblock
+
+
+\bibitem[Juarez et~al\mbox{.}(2014)]%
+        {juarez2014critical}
+\bibfield{author}{\bibinfo{person}{Marc Juarez}, \bibinfo{person}{Sadia Afroz},
+  \bibinfo{person}{Gunes Acar}, \bibinfo{person}{Claudia Diaz}, {and}
+  \bibinfo{person}{Rachel Greenstadt}.} \bibinfo{year}{2014}\natexlab{}.
+\newblock \showarticletitle{A critical evaluation of website fingerprinting
+  attacks}. In \bibinfo{booktitle}{\emph{Proceedings of the 2014 ACM SIGSAC
+  Conference on Computer and Communications Security}}.
+  \bibinfo{pages}{263--274}.
+\newblock
+
+
+\bibitem[Kan(2013)]%
+        {kan2013}
+\bibfield{author}{\bibinfo{person}{Michael Kan}.}
+  \bibinfo{year}{2013}\natexlab{}.
+\newblock \bibinfo{title}{GitHub unblocked in China after former Google head
+  slams its censorship}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://www.computerworld.com/article/2715282/github-unblocked-in-china-after-former-google-head-slams-its-censorship.html}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Panchenko et~al\mbox{.}(2011)]%
+        {panchenko2011website}
+\bibfield{author}{\bibinfo{person}{Andriy Panchenko}, \bibinfo{person}{Lukas
+  Niessen}, \bibinfo{person}{Andreas Zinnen}, {and} \bibinfo{person}{Thomas
+  Engel}.} \bibinfo{year}{2011}\natexlab{}.
+\newblock \showarticletitle{Website fingerprinting in onion routing based
+  anonymization networks}. In \bibinfo{booktitle}{\emph{Proceedings of the 10th
+  annual ACM workshop on Privacy in the electronic society}}.
+  \bibinfo{pages}{103--114}.
+\newblock
+
+
+\bibitem[Rimmer et~al\mbox{.}(2017)]%
+        {rimmer2017automated}
+\bibfield{author}{\bibinfo{person}{Vera Rimmer}, \bibinfo{person}{Davy
+  Preuveneers}, \bibinfo{person}{Marc Juarez}, \bibinfo{person}{Tom
+  Van~Goethem}, {and} \bibinfo{person}{Wouter Joosen}.}
+  \bibinfo{year}{2017}\natexlab{}.
+\newblock \showarticletitle{Automated website fingerprinting through deep
+  learning}.
+\newblock \bibinfo{journal}{\emph{arXiv preprint arXiv:1708.06376}}
+  (\bibinfo{year}{2017}).
+\newblock
+
+
+\bibitem[Sirinam et~al\mbox{.}(2018)]%
+        {sirinam2018deep}
+\bibfield{author}{\bibinfo{person}{Payap Sirinam}, \bibinfo{person}{Mohsen
+  Imani}, \bibinfo{person}{Marc Juarez}, {and} \bibinfo{person}{Matthew
+  Wright}.} \bibinfo{year}{2018}\natexlab{}.
+\newblock \showarticletitle{Deep fingerprinting: Undermining website
+  fingerprinting defenses with deep learning}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2018 ACM SIGSAC Conference on
+  Computer and Communications Security}}. \bibinfo{pages}{1928--1943}.
+\newblock
+
+
+\bibitem[Sirinam et~al\mbox{.}(2019)]%
+        {sirinam2019triplet}
+\bibfield{author}{\bibinfo{person}{Payap Sirinam}, \bibinfo{person}{Nate
+  Mathews}, \bibinfo{person}{Mohammad~Saidur Rahman}, {and}
+  \bibinfo{person}{Matthew Wright}.} \bibinfo{year}{2019}\natexlab{}.
+\newblock \showarticletitle{Triplet fingerprinting: More practical and portable
+  website fingerprinting with n-shot learning}. In
+  \bibinfo{booktitle}{\emph{Proceedings of the 2019 ACM SIGSAC Conference on
+  Computer and Communications Security}}. \bibinfo{pages}{1131--1148}.
+\newblock
+
+
+\bibitem[w3techs(2023)]%
+        {w3techs}
+\bibfield{author}{\bibinfo{person}{w3techs}.} \bibinfo{year}{2023}\natexlab{}.
+\newblock \bibinfo{title}{Usage statistics of default protocol HTTPS for
+  websites}.
+\newblock
+\newblock
+\urldef\tempurl%
+\url{https://w3techs.com/technologies/details/ce-httpsdefault}
+\showURL{%
+\tempurl}
+
+
+\bibitem[Wagner et~al\mbox{.}(1996)]%
+        {wagner1996analysis}
+\bibfield{author}{\bibinfo{person}{David Wagner}, \bibinfo{person}{Bruce
+  Schneier}, {et~al\mbox{.}}} \bibinfo{year}{1996}\natexlab{}.
+\newblock \showarticletitle{Analysis of the SSL 3.0 protocol}. In
+  \bibinfo{booktitle}{\emph{The Second USENIX Workshop on Electronic Commerce
+  Proceedings}}, Vol.~\bibinfo{volume}{1}. \bibinfo{pages}{29--40}.
+\newblock
+
+
+\end{thebibliography}

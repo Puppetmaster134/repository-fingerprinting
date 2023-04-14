@@ -1,7 +1,7 @@
 ## create-repo-list
 Uses PyGithub to scrape the top starred repos. Combines with a curated list of censorship circumvention tool repositories.
 
-## scrape-repo-traffic
+## scrape-traffic
 Contains the tool to record network traffic and scrape each repository. There's also a dockerfile to dockerize the whole process.
 
 ## clean-data

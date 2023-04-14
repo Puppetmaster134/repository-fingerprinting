@@ -1,14 +1,14 @@
 # Fdb version 3
-["bibtex out/sample-authordraft"] 1681421893 "out/sample-authordraft.aux" "out/sample-authordraft.bbl" "out/sample-authordraft" 1681422692
+["bibtex out/sample-authordraft"] 1681421893 "out/sample-authordraft.aux" "out/sample-authordraft.bbl" "out/sample-authordraft" 1681439753
   "./ACM-Reference-Format.bst" 1681013396 90330 871e55fb6d8dc37a22e9e4941a79e593 ""
-  "out/sample-authordraft.aux" 1681422692 6660 38ad6faffa1036de2b9d0cd11877a104 "pdflatex"
+  "out/sample-authordraft.aux" 1681439752 6660 38ad6faffa1036de2b9d0cd11877a104 "pdflatex"
   "sample-base.bib" 1681414893 7208 9ab850616583ca83b3b716752b39b3a4 ""
   (generated)
   "out/sample-authordraft.bbl"
   "out/sample-authordraft.blg"
-["pdflatex"] 1681422690 "/home/brian/Projects/CS858/paper/sample-authordraft.tex" "out/sample-authordraft.pdf" "sample-authordraft" 1681422692
+["pdflatex"] 1681439751 "/home/brian/Projects/RepositoryFingerprinting/paper/sample-authordraft.tex" "out/sample-authordraft.pdf" "sample-authordraft" 1681439753
   "/etc/texmf/web2c/texmf.cnf" 1664311801 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/brian/Projects/CS858/paper/sample-authordraft.tex" 1681422689 39650 b27143570d889cb5d01e8564482a5c94 ""
+  "/home/brian/Projects/RepositoryFingerprinting/paper/sample-authordraft.tex" 1681422689 39650 b27143570d889cb5d01e8564482a5c94 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc" 1558214095 7693 0f2dce6d313c82989ec3a67fc24df2a0 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc" 1490131464 2921 8ca0eb0831f9bc5da080d3697cfe67bf ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc" 1490131464 2933 9ad527ce78d7c5fa0a642dead095f172 ""
@@ -190,9 +190,9 @@
   "charts/interarrival-times.png" 1681402693 98487 705d7398ed64a74d9bf5f6be9a5f17e6 ""
   "charts/mean-packet-length.png" 1681402692 95448 b49703e4a43586acf0a13015048de180 ""
   "charts/unique-packet-lengths.png" 1681405585 100822 b1f3e37485ca1b94f979ff4e0b2c8fc4 ""
-  "out/sample-authordraft.aux" 1681422692 6660 38ad6faffa1036de2b9d0cd11877a104 "pdflatex"
+  "out/sample-authordraft.aux" 1681439752 6660 38ad6faffa1036de2b9d0cd11877a104 "pdflatex"
   "out/sample-authordraft.bbl" 1681421893 8994 a9686795b00e7575c75f8ccfb6d332de "bibtex out/sample-authordraft"
-  "out/sample-authordraft.out" 1681422692 3056 8a10a96d574c2957f9ff6c44932c5a64 "pdflatex"
+  "out/sample-authordraft.out" 1681439752 3056 8a10a96d574c2957f9ff6c44932c5a64 "pdflatex"
   "sample-authordraft.tex" 1681422689 39650 b27143570d889cb5d01e8564482a5c94 ""
   (generated)
   "out/sample-authordraft.aux"

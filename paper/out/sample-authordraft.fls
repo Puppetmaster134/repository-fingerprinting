@@ -1,9 +1,9 @@
-PWD /home/brian/Projects/CS858/paper
+PWD /home/brian/Projects/RepositoryFingerprinting/paper
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/brian/Projects/CS858/paper/sample-authordraft.tex
+INPUT /home/brian/Projects/RepositoryFingerprinting/paper/sample-authordraft.tex
 OUTPUT out/sample-authordraft.log
 INPUT acmart.cls
 INPUT acmart.cls

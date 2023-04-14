@@ -11,10 +11,16 @@ Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
 Reallocated global_strs (elt_size=200001) to 20 items from 10.
 Reallocated glb_str_end (elt_size=4) to 20 items from 10.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--empty publisher in barradas2018effective
+Warning--empty address in barradas2018effective
+Warning--empty publisher in bocovich2016slitheen
+Warning--empty address in bocovich2016slitheen
 Warning--empty publisher in cai2012touching
 Warning--empty address in cai2012touching
 Warning--no number and no volume in cheng1998traffic
 Warning--page numbers missing in both pages and numpages fields in cheng1998traffic
+Warning--empty publisher in hahn2016games
+Warning--empty address in hahn2016games
 Warning--empty publisher in hayes2016k
 Warning--empty address in hayes2016k
 Warning--empty publisher in herrmann2009website
@@ -23,6 +29,8 @@ Warning--empty publisher in ho1995random
 Warning--empty address in ho1995random
 Warning--empty publisher in juarez2014critical
 Warning--empty address in juarez2014critical
+Warning--empty publisher in mohajeri2012skypemorph
+Warning--empty address in mohajeri2012skypemorph
 Warning--empty publisher in panchenko2011website
 Warning--empty address in panchenko2011website
 Warning--no number and no volume in rimmer2017automated
@@ -34,45 +42,45 @@ Warning--empty address in sirinam2019triplet
 Warning--can't use both volume and number fields in wagner1996analysis
 Warning--empty publisher in wagner1996analysis
 Warning--empty address in wagner1996analysis
-You've used 16 entries,
+You've used 21 entries,
             5981 wiz_defined-function locations,
-            1563 strings with 21075 characters,
-and the built_in function-call counts, 17533 in all, are:
-= -- 2061
-> -- 490
+            1585 strings with 22036 characters,
+and the built_in function-call counts, 23606 in all, are:
+= -- 2776
+> -- 661
 < -- 0
-+ -- 157
-- -- 163
-* -- 1134
-:= -- 1652
-add.period$ -- 81
-call.type$ -- 16
-change.case$ -- 108
-chr.to.int$ -- 16
-cite$ -- 39
-duplicate$ -- 1684
-empty$ -- 1178
-format.name$ -- 207
-if$ -- 4237
++ -- 214
+- -- 219
+* -- 1540
+:= -- 2204
+add.period$ -- 106
+call.type$ -- 21
+change.case$ -- 144
+chr.to.int$ -- 21
+cite$ -- 52
+duplicate$ -- 2278
+empty$ -- 1592
+format.name$ -- 283
+if$ -- 5734
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 57
-newline$ -- 171
-num.names$ -- 112
-pop$ -- 704
+missing$ -- 81
+newline$ -- 207
+num.names$ -- 147
+pop$ -- 962
 preamble$ -- 1
-purify$ -- 235
+purify$ -- 311
 quote$ -- 0
-skip$ -- 638
+skip$ -- 858
 stack$ -- 0
-substring$ -- 1324
-swap$ -- 158
+substring$ -- 1798
+swap$ -- 216
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 438
-warning$ -- 23
-while$ -- 102
+type$ -- 574
+warning$ -- 31
+while$ -- 136
 width$ -- 0
-write$ -- 344
-(There were 23 warnings)
+write$ -- 436
+(There were 31 warnings)

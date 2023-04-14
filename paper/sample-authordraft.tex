@@ -184,7 +184,7 @@ We apply techniques from website fingerprinting literature to packet traces coll
 
 As a collaborative discipline, software engineering is heavily predicated on the availability of cloud-based repository services. Developers can share programming projects in the cloud, publicly or privately. In the case of public repositories, other developers around the world can freely view and download (\textit{aka. clone}) them to compile on their own devices. One of the most popular solutions in this space, Github, has over 100 million registered users~\cite{dohmke2023} and garned an ``untouchable'' status as a result with respect to censorship.
 
-In 2013, China faced backlash when Github was blocked for two days~\cite{kan2013}. It took large-scale backlash across Chinese social media networks for access to be restored to Chinese netizens. Since then, Github has remained unblocked in China due to how entangled it is with the software development process. With the dawn of the encrypted Internet, Github seemed to be a natural choice for hosting tools and resources that assist in circumventing censorship. This is due to the fact that Github only allows repositories to be accessed and downloaded over encrypted protocols such as \textit{https} or \textit{ssh}.
+In 2013, China faced backlash when Github was blocked for two days~\cite{kan2013}. It took large-scale backlash across Chinese social media networks for access to be restored to Chinese netizens. Since then, Github has remained unblocked in China due to how entangled it is with the software development process. With the dawn of the encrypted Internet, Github seemed to be a natural choice for hosting tools and resources that assist in circumventing censorship. This is due to the fact that Github only allows repositories to be accessed and downloaded over encrypted protocols such as \textit{https} or \textit{ssh}. Under such schemes, the casual observer can only identify that a client is accessing the Github root domain and is unable to identify which repository a client is attempting to access.
 
 Modern encryption techniques conceal most of the content of today's web traffic. The \textit{https} protocol uses encryption schemes such as TLS or SSL to obfuscate the content of web traffic from any middleman observers. As of April 2023, an estimated 82.3\% of pages used \textit{https} as their default protocol \cite{w3techs}. To potential observers, the only visible components within a trace of encrypted traffic are the source and destination IP addresses.
 
@@ -221,7 +221,9 @@ Many early WF attacks were formulated as closed world tasks. Juarez et al~\citep
 
 In machine learning, classification models will generally transform a raw set of features into representations that are linearly separable before determining which class they belong to. Hayes and Danezis~\citep{hayes2016k} leverage these learned representations through \textit{k-fingerprinting} to apply a closed-world Random Forest classifier to an open-world setting. By first training a Random Forest classifier packet traces collected from a set of monitored websites, the model will effectively learn discernible features of those monitored websites specifically. When applied to an open-world setting, the random forest will be primed to identify features of the monitored websites within a previously unseen website's packet trace. The \textit{k} in \textit{k-fingerprinting} refers to an adjustable hyperparameter determining the number of trees which must agree on the class of an unmonitored website during inference time. Lower values of \textit{k} will allow the model to more liberally predict which class an unmonitored webpage might belong to at the cost of a higher rate of False Positives. As \textit{k} increases, the False Positive rate goes down because more trees within the forest must agree on a given class. 
 
-With the recent rise to dominance of deep learning, research in website fingerprinting shifted focus towards maximizing accuracy rather than interpretability. Deep learning models are black-box function approximators that can learn an alignment between a feature space and an output space. In website fingerprinting, the output space will ideally be a low dimensional, linearably separable space that can be leveraged for classification. Deep learning models come in a wide variety of configurations~\citep{sirinam2018deep,sirinam2019triplet,rimmer2017automated} but are all limited in that they learn representations of features that are difficult to interpret compared to those extracted by human analysis. A lack of interpretability makes it difficult to identify flaws in the design of the system we're analyzing. Due to this limitation, we opt to use a set of 175 manually extracted features from Cherubin et al~\citep{cherubin2017bayes}.
+With the recent rise to dominance of deep learning, research in website fingerprinting shifted focus towards maximizing accuracy rather than interpretability. Deep learning models are black-box function approximators that can learn an alignment between a feature space and an output space by minimizing an objective function. Using the result of the objective function, adjustments can be made to model parameters by differentiating backwards through the model, as one might with any continuous function. 
+
+In website fingerprinting, the output space of a deep learning model will ideally be low dimensional and linearly separable so it can be leveraged for classification. Deep learning models for WF come in a wide variety of configurations~\citep{sirinam2018deep,sirinam2019triplet,rimmer2017automated} but are all limited in that they learn representations of features that are difficult to interpret compared to those extracted by human analysis. A lack of interpretability makes it difficult to identify flaws in the design of the system we're analyzing. Due to this limitation, we opt to use a set of 175 manually extracted features from Cherubin et al~\citep{cherubin2017bayes}.
 
 \subsection{Random Forest Classifiers}
 Motivated by Hayes and Danezis~\citep{hayes2016k}, we opt to use the Random Forest classification model for our work. A Random Forest is another term for an ensemble of decision trees that leverage a randomized sampling process~\citep{ho1995random}. Randomized sampling mitigates the tendency for individual decision trees to overfit a dataset. This is particularly useful in the open-world setting for website fingerprinting attacks because a classifier should learn generalizable features of the data without memorizing any features unique to a specific page's packet trace.
@@ -232,16 +234,17 @@ As far as we know, there are no prior works that attempt to conduct a website fi
 Our expectation was that packet traces collected from multiple loads of the same repository would be similar with respect to their extracted features. With this in mind, we chose to collect multiple traces from each repository. In order to build a robust representation of traffic patterns for each repository, we ultimately settled on collecting 50 traces for each repository.
 
 \subsection{Identifying Repositories}
-With respect to identifying candidate repositories themselves, we wanted a wide representation of public repositories. We settled on two categories:
+With respect to identifying candidate repositories themselves, we wanted a wide representation of public repositories. We collect repositories from two categories: one which a typical Github user might be accessing, and one which a netizen might access for the purposes of censorship evasion. The two categories are:
 \begin{itemize}
-  \item \textbf{High Star Count -- } When registered users on Github find content to be useful, insightful, or well-documented, they can ``star'' a repository. A star is roughly equivalent to liking a particular repository. Using the Github REST API, we were able to identify a set of repositories from a list of repositories with the most stars of all time. We presume that high starred repositories have the highest notoriety and consequently have the most interaction from average Github users. We select 87 of the most highly starred public Github repositories for our dataset.
-  \item \textbf{Forbidden Tooling --} We additionally select 9 publicly available tools from censorship circumvention literature. Github is an ideal platform for the distribution of censorship circumvention tools due to its use of \textit{https} as a default protocol and it's notoriety which makes it difficult for censors to block outright.
+  \item \textbf{High Star Count -- } When registered users on Github find content to be useful, insightful, or well-documented, they can ``star'' a repository. A star is roughly equivalent to liking a particular repository. Using the Github REST API, we were able to identify a set of repositories from a list of repositories with the most stars of all time. We presume that high starred repositories have the highest notoriety and consequently have the most interaction from average Github users. This is suitable to our purposes because we presume it to most closely resemble the majority of client interactions with public repostiories. We select 87 of the most highly starred public Github repositories for our dataset.
+  \item \textbf{Forbidden Tooling --} We additionally select 9 publicly available tools from censorship circumvention literature. These tools include tools for establishing covert channels~\citep{barradas2018effective,barradas2017deltashaper,hahn2016games,mohajeri2012skypemorph,bocovich2016slitheen} and privacy enhancing tools such as Tor~\citep{dingledine2004tor} and Shadowsocks. Github is an ideal platform for the distribution of censorship circumvention tools due to its use of \textit{https} as a default protocol. Additionally, the ubiquity of Github in software development circles makes it a difficult target for adversaries to block outright without extreme civil backlash~\citep{kan2013}.
 \end{itemize}
+
 
 \subsection{Collecting Data}
 For data collection, before writing any code we developed a pipeline describing our system from end to end. The first phase of the pipeline involved monitoring traffic from a network adapter while cloning a repository. After the clone session is completed, collected packets could then be parsed into smaller, more manageable files and the original packet data could be discarded due to the prohibitive costs of keeping them on disk. The parsed files contain the raw packet data, including order, size, and timing, which we can then use to train a downstream classifier. These can be found in our Github repository.
 
-Before collecting any data, we first identified a necessary toolset for each step of the pipeline to constrain our system to as few moving parts as possible.
+Our first step in developing a pipeline was to identify an appropriate toolset for each step to constrain our system to as few moving parts as possible.
 \begin{itemize}
   \item \textbf{tcpdump -- }We use the \texttt{tcpdump} utility to monitor the network adapter used to connect to the Internet. The \texttt{tcpdump} utility monitors all incoming and outgoing packets and stores them as a binary \textit{.pcap} file. Filters can easily be applied with \texttt{tcpdump} to limit recorded packets to a particular subset of traffic based on source or destination IP address or packet size. We opted to leverage the filtering features in some of our original scrapes to avoid recording traffic from other system utilities utilizing the same network adapter simultaneously. We deviated from this approach in later iterations of our project in favor of using a Docker container to gain more stable network conditions during our scrapes.
   \item \textbf{git -- }We additionally use the \texttt{git} utility to clone the repositories themselves. This utility is ubiquitious in the software development industry due to it's inclusion in most unix-like shells.
@@ -255,6 +258,7 @@ Our next step uses the \texttt{git} utility with the clone command to download a
 Because raw packet traces are a like-for-like copy of a repository's content with respect to size, we sought to immediately process them into a more manageable form and discard the \textit{.pcap} files to preserve disk space. Repositories of some larger projects were in the order of several gigabytes in size which became prohibitively expensive to store over 50 downloads. The \texttt{dpkt} Python module, enabled us to inspect each \textit{.pcap} file and extract only the metadata related features while discarding the encrypted payloads of each packet. Prior works in this space specifically extract the time at which a packet passed through the network interface, the size of the packet, and whether or not the packet was inbound or outbound. As one might expect when downloading many files, the larger packets were predominately inbound. We store the time of each packet with respect to the first packet in the trace.
 
 Our function loaded each repository in series one time and stored the metadata from each collected trace under a globally unique identifier (GUID) which we refer to henceforth as a ``run id''. We repeated this process 50 times to build a robust distribution of packet traces for each repository we selected for monitoring. 
+\subsection{Feature Extraction}
 
 
  
@@ -265,10 +269,7 @@ We opted to move our script to a controlled environment using the containerizati
 
 Docker images are particularly useful for running a compiled image on multiple machines because native controls are abstracted away by the Docker software itself. With this in mind, we chose to run our container using a popular virutal machine hosting service from a datacenter located in Frankfurt. Hosting services are a safer choice for traffic collection due to service uptime guarantees in their terms of service. As our script required multiple days to run, we wanted to avoid any network interruptions that could be attributed to our university's internal network.
 
-\section{Experimental Setup}
-Experimental setups in Website Fingerprinting can be broken down into two subtasks. The first subtask involves identifying a set of features to extract from traffic metadata. The second subtask is using extracted features with their respective class labels to train a multi-class classifier.
 
-\subsection{Feature Extraction}
 \begin{center}
   \begin{table*}
     \begin{tabular}{ |c || c | c| }
@@ -285,6 +286,9 @@ Experimental setups in Website Fingerprinting can be broken down into two subtas
     \label{table:featuresets}
   \end{table*}
 \end{center}
+\section{Experimental Setup}
+Experimental setups in Website Fingerprinting can be broken down into two subtasks. The first subtask involves identifying a set of features to extract from traffic metadata. The second subtask is using extracted features with their respective class labels to train a multi-class classifier.
+
 
 Features can be extracted from sequential data either through manual annotations or use of deep learning to build an aggregate representation. A common criticism for using deep learning to do any kind of feature extration is a lack of interpretability. Understanding which features of encrypted traffic leak the most identifiable information is an important to understand when developing a solution to it. Due to this, we opt for interpretable aggragate features of traffic that were brought to light in prior research.
 
@@ -298,12 +302,13 @@ In total, we extract a default 175 features from each trace. The first 157 featu
 
 We generate four feature sets with different combinations of traffic features as seen in Table~\ref{table:featuresets}. Our first feature set only includes timing related features, such as packet interarrival time, packet order, and ratios of inbound to outbound traffic in the first and last thirty packets. Our second feature set contains exclusively features related to packet length such as minimum packet length, maximum packet length, average packet length, and variance of packet lengths. We observe each inbound, outbound, and a combination to compose our set of size features. Our third feature set is a combination of both time and size related feature sets. Motivated by Hermann et al~\citep{herrmann2009website}, we opted to extend our third feature set by additionally adding counts of unique packet lengths in either direction of traffic.
 
+
 \subsection{Classification}
 In Website Fingerprinting literature, the two most studied attacks are the closed-world setting and the open-world setting. An attack in the closed world setting is formulated as a n-fold classification task over each class in the dataset. Accuracy is reported as a percentage of the validation set accurately classified as one of the n classes. Attacks in the open world setting require an additional dataset of \textit{unmonitored} webpages to be classified with a model that was pretrained on the closed world task. As open world attacks are designed to mimic a deployed system, the utility of attacks in the open world setting are reported with respect to precision and recall. Due to time constraints in the course, we opt to perform only the closed-world attack, leaving an analysis of the open-world setting to future work.
 
 Our dataset consists of 4,844 raw data files which contain features extracted directly from binary packet data. We split our dataset into a training and cross-validation set on a 95 to 5 split. This gives us a training set consisting of 4,602 data points and a training set consisting of 244 data points, each with 175 extracted features.
 
-
+\section{Results}
 \begin{figure*}
   \includegraphics[width=\textwidth]{charts/mean-packet-length.png}
   \caption{Inbound and Outbound mean packet lengths across all monitored repositories over 50 clones.}
@@ -316,16 +321,19 @@ Our dataset consists of 4,844 raw data files which contain features extracted di
   \label{fig:arrivaltime}
 \end{figure*}
 
+
+\subsection{Feature Distributions}
+We first examined the extracted features to discern any potential patterns in the feature distributions. As seen in Figure~\ref{fig:packetlen}, inbound packet sizes were much larger than outbound packet sizes on average by nature of downloading many uncompressed files. Interestingly, the variance in outbound packet size between repositories was massive with some repositories averaging outbound packets of around \~60 bytes while other repositories averaged outbound packet lengths of \~500 bytes or greater. Further analysis is required to determine the reasoning behind this anomolic activity but we anticipate that feature distributions with higher variance, such as this one, are the ones that leak the most information in the open-world setting.
+
+Packet interarrival time, as seen in Figure~\ref{fig:arrivaltime} indicated that inbound packets arrived about twice as frequently as outbound traffic. This can be explained by the time it takes for decrypted packet contents to be written to disk. A future experiment may wish to compare traffic patterns of the clone function with those of the push function, which uploads repository contents to a remote host. This feature may leak some information regarding whether a client is downloading or uploading files even when features related to packet length are not considered.
+
+Unique packet length was one of the first features of traffic patterns that was examined in website fingerprinting literature~\citep{herrmann2009website}. We opt to include three features based on a mean count of unique packet lengths for each repository: inbound, outbound, and aggregate. Figure~\ref{fig:packetlen} indicates that most repositories had significantly more unique packet lengths in the inbound direction, which is intuitive given that files were being downloaded from a remote respository. The variance between repositories can likely be explained simply by some repositories being much larger than others. The smallest repositories were under 10 megabytes in aggregate size on disk while the largest repositories on our scrape list were several gigabytes in size. An extension of this work could perform an analysis of number of files and aggregate repository size on disk to get a better idea of how these features of a repository might affect traffic patterns during a clone procedure.
+
 \begin{figure*}
   \includegraphics[width=\textwidth]{charts/unique-packet-lengths.png}
   \caption{Inbound and Outbound mean unique packet lengths across all monitored repositories over 50 clones.}
   \label{fig:uniquepacket}
 \end{figure*}
-
-\section{Results}
-
-\subsection{Feature Distributions}
-We first examined the extracted features to discern any potential patterns in the feature distributions. As seen in Figure~\ref{fig:packetlen}, inbound packet sizes were much larger than outbound packet sizes on average by nature of downloading many uncompressed files. Interestingly, the variance in outbound packet size between repositories was massive with some repositories averaging outbound packets of around \~60 bytes while other repositories averaged outbound packet lengths of \~500 bytes or greater. Further analysis is required to determine the reasoning behind this anomolic activity but we anticipate that feature distributions with higher variance, such as this one, are the ones that leak the most information in the open-world setting.
 
 \subsection{Model Accuracy}
 The feature set which achieved the best results with the Random Forest classifier was the one containing only information regarding packet length with a cross-validation accuracy of 90\%.  This was surprising because we had anticipated that more information collected would only bolster the strength of a potential adversary when performing website fingerprinting on repository traffic. Just as notable, the feature set containing exclusively time-related features was still able to achieve 49.7\% accuracy, effectively narrowing down a 96-fold classification task into a guess between 1 of 2 classes. The differences between the third and fourth feature sets seem to indicate that the three counting features for unique packet lengths have negligible impact on the final classification results.
@@ -338,25 +346,41 @@ The negligible difference in cross-validation accuracy between the second, third
 
 The traffic patterns initiated by a repository clone operation are fundamentally different from those generated by a website pageload. With website page loads, a file containing renderable markup is served to a client's browser. This file may also contain Javascript code embedded within it to fetch additional resources from remote content distribution networks to ensure the page functions as intended for the client. 
 
+By contrast, \texttt{git clone} works by first retrieving a \.git directory with a history of all prior commits to a repository. From there, branches can be ``checked out'' (aka. downloaded) from the remote host. By default, \texttt{git clone} will check out the main branch of the repository and begin downloading files in sequence to fill out the file structure of the repository.
+
+Hayes and Danezis~\citep{hayes2016k} note that some of the most important features in page load traffic patterns are contained in the first 30 packets. We contend that this may not be the case for remote repositories cloned from Github because it's always necessary for the \texttt{git} utility to download the necessary metadata before pulling any files. We discuss the need for a weighted feature analysis specifically for repository fingerprinting in Section 6.2. 
+
 %Write about how git clone works
 
 
 \section{Conclusion}
-
-
-
+In this work we've examined the closed-world website fingerprinting attack against a novel dataset of traffic patterns obtained by cloning public Github repositories. The insights exposed in this work indicate that it may be possible to identify when a client is downloading repositories of a certain type in an open-world setting. There are discernible features that can be obtained through residual traffic analysis that may even expose information about private repositories and their contents as well.
 
 \subsection{Potential Defenses}
-%archive downloads, caveat of no commit history
-%cloning with a depth of 1
+\subsubsection*{Archival Downloads}
+This work analyzes repositories downloaded through use of the \texttt{git} utility's clone function which downloads uncompressed files one at a time. Github provides support repositories to be downloaded as compressed archives as well. Unfortunately, downloading a repository as an archive doesn't include any information about commit history or branches due to the lack of a git metadata subdirectory. Downloading a repository as an archive is still a useful alternative for users of a public repository that don't intend to further interact with a repository after downloading it. Repositories that store collections of open source books and news articles may fall under this category.
+
+\subsubsection*{Clone Depth}
+Clone depth refers to an argument that can be passed to the clone function to limit the amount of data that is retrieved from the remote repository. This feature is intended to reduce load on the remote server but is seldom used with large-scale cloud solutions like Github. Cloning with a clone depth of \textit{n} will notify the remote repository to only send the most recent \textit{n} revisions of that repository. This means less metadata, and potentially less files will need to be retrieved from the remote host. A shallower clone depth could drastically altar the traffic patterns observed when cloning some older repositories with many commits and a large amount of files.
+
+\subsubsection*{Distributed File Downloads} It may be possible to further obfuscate packet length by modifying the underlying protocol that the \texttt{git} utility uses. Files could be partitioned on the remote server into equal-sized pieces before being transmitted to the client to decrease the amount of information leaked to any potential observers. Protocol level changes may be infeasible because it would likely require some modifcation to Github's own API as well. Alternatively, files could be stored as equal-sized partitions in the repository itself but it would incur some overhead to the client before each push and pull.
 
 \subsection{Future Work}
+We've identified several directions for future work which could result in both stronger attacks and stronger defenses.
+
 %feature analysis specifically for remote repo traffic
 
-%k-fingerprinting, see if private repos can be id'ed
-We've identified several directions for future work in this project. The logical next step would be to implement repository fingerprinting as an open-world k-fingerprinting attack to see how well learned features of monitored repositories can be generalized to the set of all repositories.
+\subsubsection*{Feature Analysis for Repository Fingerprinting}
+We anticipate based on the results of our experiment that the topology of traffic features with respect to repository fingerprinting is significantly different to those of a typical webpage load. A weighted feature analysis would be the first logical extension of this work in order to discern which features are truly leaking the most information when a repository is cloned and the implications this could have on the utility of fingerprinting attacks.
 
-%deep learning classifier and discriminators
+\subsubsection*{Formulating an Open World Attack}
+We regretfully didn't have time to conduct an open-world attack to evaluate the ability of our model to generalize to unseen repositories. As we opted to use Random Forests in our closed-world setting, implementing the \textit{k-fingerprinting} attack of Hayes and Danezis~\citep{hayes2016k} would be the easiest means by which to accomplish this. Before this can happen, we anticipate that we'd need to scrape a second dataset of \textit{unmonitored} repositories.
+
+\subsubsection*{Attacks on Private Repositories}
+After evaluating the utility of repository fingerprinting attacks in an open-world setting, it may be insightful to evaluate how well the model can infer the contents of private repositories. Many Github users, including businesses with their own repositories, rely on private accounts to protect their intellectual property in the form of code and other resources. If open-world repository fingerprinting can expose any information about the contents of private repositories, there might be a greater push to further obfuscate residual artifacts as a product of a client interacting with Github.
+
+\subsubsection*{Deep Learning}
+Deep learning techniques have shown to improve the True Positive rate of fingerprinting attacks at the cost of interpretability. An analysis of deep learning models in repository fingerprinting attacks may also yield similar insights.
 
 
 

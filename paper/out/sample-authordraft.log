@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  13 APR 2023 22:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2022.11.27)  14 APR 2023 01:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -821,90 +821,106 @@ LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/n' will be
 (Font)              scaled to size 7.0pt on input line 223.
  [2.2]
-LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 246.
+LaTeX Font Info:    Trying to load font information for T1+zi4 on input line 249.
  (/usr/share/texlive/texmf-dist/tex/latex/inconsolata/t1zi4.fd
 File: t1zi4.fd 2018/01/14 T1/zi4 (Inconsolata)
 )
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
-(Font)              scaled to size 9.0pt on input line 246.
+(Font)              scaled to size 9.0pt on input line 249.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zi4' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [3.3]
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3.3]
+Underfull \vbox (badness 3907) has occurred while \output is active []
 
  [4.4]
-<charts/mean-packet-length.png, id=156, 578.16pt x 216.81pt>
+<charts/mean-packet-length.png, id=165, 578.16pt x 216.81pt>
 File: charts/mean-packet-length.png Graphic file (type png)
 <use charts/mean-packet-length.png>
-Package pdftex.def Info: charts/mean-packet-length.png  used on input line 308.
+Package pdftex.def Info: charts/mean-packet-length.png  used on input line 313.
 (pdftex.def)             Requested size: 506.295pt x 189.86046pt.
 
 
-Class acmart Warning: A possible image without description on input line 311.
+Class acmart Warning: A possible image without description on input line 316.
 
-<charts/interarrival-times.png, id=158, 578.16pt x 216.81pt>
+<charts/interarrival-times.png, id=167, 578.16pt x 216.81pt>
 File: charts/interarrival-times.png Graphic file (type png)
 <use charts/interarrival-times.png>
-Package pdftex.def Info: charts/interarrival-times.png  used on input line 314.
+Package pdftex.def Info: charts/interarrival-times.png  used on input line 319.
 (pdftex.def)             Requested size: 506.295pt x 189.86046pt.
 
-Class acmart Warning: A possible image without description on input line 317.
+Class acmart Warning: A possible image without description on input line 322.
 
-<charts/unique-packet-lengths.png, id=159, 578.16pt x 216.81pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<charts/unique-packet-lengths.png, id=172, 578.16pt x 216.81pt>
 File: charts/unique-packet-lengths.png Graphic file (type png)
 <use charts/unique-packet-lengths.png>
-Package pdftex.def Info: charts/unique-packet-lengths.png  used on input line 320.
+Package pdftex.def Info: charts/unique-packet-lengths.png  used on input line 333.
 (pdftex.def)             Requested size: 506.295pt x 189.86046pt.
 
-Class acmart Warning: A possible image without description on input line 323.
+
+Class acmart Warning: A possible image without description on input line 336.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5.5] (out/sample-authordraft.bbl
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
-(Font)              scaled to size 7.0pt on input line 47.
-
+ [5.5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \tempurl on input line 152.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6.6 <./charts/mean-packet-length.png> <./charts/interarrival-times.png>]
-LaTeX Info: Redefining \tempurl on input line 214.
+LaTeX Font Info:    Font shape `T1/LinuxBiolinumT-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 361.
+
+Underfull \vbox (badness 1622) has occurred while \output is active []
+
+ [7.7 <./charts/unique-packet-lengths.png>] (out/sample-authordraft.bbl
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 7.0pt on input line 48.
+LaTeX Info: Redefining \tempurl on input line 200.
+
+Underfull \vbox (badness 1681) has occurred while \output is active []
+
+LaTeX Info: Redefining \tempurl on input line 273.
 )
 
 Class acmart Warning: Some images may lack descriptions.
 
 
-Overfull \vbox (1.16599pt too high) has occurred while \output is active []
+Package balance Warning: You have called \balance in second column
+(balance)                Columns might not be balanced.
 
-Package atenddvi Info: Last page = 7.
- [7.7 <./charts/unique-packet-lengths.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 368.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 368.
+Package atenddvi Info: Last page = 8.
+[8.8]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 392.
  (out/sample-authordraft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 368.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 368.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 392.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
 Package rerunfilecheck Info: File `sample-authordraft.out' has not changed.
-(rerunfilecheck)             Checksum: 8A10A96D574C2957F9FF6C44932C5A64;3056.
+(rerunfilecheck)             Checksum: 8DEBE0BA31B2DE2D3EC5053D46BB89F7;3057.
  ) 
 Here is how much of TeX's memory you used:
- 19433 strings out of 482590
- 293921 string characters out of 5953556
- 600504 words of memory out of 5000000
- 33706 multiletter control sequences out of 15000+600000
- 650045 words of font info for 279 fonts, out of 8000000 for 9000
+ 19497 strings out of 482590
+ 295385 string characters out of 5953556
+ 606308 words of memory out of 5000000
+ 33725 multiletter control sequences out of 15000+600000
+ 659275 words of font info for 300 fonts, out of 8000000 for 9000
  470 hyphenation exceptions out of 8191
- 63i,12n,100p,1781b,585s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on out/sample-authordraft.pdf (7 pages, 702809 bytes).
+ 63i,11n,100p,1781b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on out/sample-authordraft.pdf (8 pages, 751157 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 210 compressed objects within 3 object streams
- 51 named destinations out of 1000 (max. 500000)
- 37568 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 283 PDF objects out of 1000 (max. 8388607)
+ 241 compressed objects within 3 object streams
+ 64 named destinations out of 1000 (max. 500000)
+ 41664 words of extra memory for PDF output out of 42996 (max. 10000000)
 

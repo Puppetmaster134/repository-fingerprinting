@@ -341,6 +341,9 @@ INPUT ./charts/interarrival-times.png
 INPUT charts/unique-packet-lengths.png
 INPUT ./charts/unique-packet-lengths.png
 INPUT ./charts/unique-packet-lengths.png
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinBiolinumTI-tlf-t1.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinBiolinumTI-tlf-t1.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinBiolinumTI-tlf-t1--base.tfm
 INPUT out/sample-authordraft.bbl
 INPUT out/sample-authordraft.bbl
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tlf-t1.tfm
@@ -348,12 +351,15 @@ INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinLibertineT-tlf-
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineT-tlf-t1--base.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/libertine/LinLibertineTI-tlf-t1.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/libertine/LinLibertineTI-tlf-t1--base.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/public/newtx/ntxsy7.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txsys.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/newtx/txex-bar.tfm
 INPUT out/sample-authordraft.aux
 INPUT out/sample-authordraft.out
 INPUT out/sample-authordraft.out
+INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_oexx6f.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-4.enc
-INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc
@@ -361,6 +367,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-z
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/newtx/LibertineMathMI.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumT.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb
+INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTI.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb
